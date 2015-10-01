@@ -6,21 +6,7 @@
 angular.module('starter', ['ionic', 'firebase'])
 
 .run(function ($ionicLoading,$ionicPlatform, $firebaseAuth) {
-    $ionicLoading.show({
-      template: 'Loading...'
-    });
-    var authObj = $firebaseAuth(new Firebase('https://ajayparsana.firebaseio.com'));
-
-    authObj.$authWithPassword({
-        email: 'test@test.com',
-        password: 'Test@123'
-    }).then(function (authData) {
-        $ionicLoading.hide();
-        alert('Login Successful');
-    }).catch(function (error) {
-        $ionicLoading.hide();
-        alert('Error', "Authentication failed: " + error);
-    });
+    
     $ionicPlatform.ready(function () {
 
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
